@@ -43,7 +43,7 @@ module GitNoted
     end
 
     def read(note)
-      File.read(note.path)
+      File.read(note.path).sub(/^:label:(.*)$\n/, '')
     end
 
     def schedule_update!(interval)
